@@ -15,12 +15,15 @@ npm install
 npm test --workspace=@rasbur/decoders
 ```
 
-The web app and API need MongoDB and Redis, and the API will not start without them. The free tiers of MongoDB Atlas and Upstash are enough:
+The web app and API need MongoDB and Redis, and the API will not start without them. Redis runs locally in Docker, and a free MongoDB Atlas cluster is enough for the database:
 
 ```bash
+docker compose up -d
 cp apps/api/.env.example apps/api/.env   # fill in the required values
 npm run dev
 ```
+
+For the local Redis, set `UPSTASH_REDIS_REST_URL=http://localhost:8079` and `UPSTASH_REDIS_REST_TOKEN=local_dev_token`.
 
 Never commit `.env` files or real credentials.
 

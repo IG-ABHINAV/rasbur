@@ -100,6 +100,7 @@ rasbur/
 
 ```bash
 npm install
+docker compose up -d                     # local Redis
 cp apps/api/.env.example apps/api/.env   # fill in the required values
 npm run dev
 ```
